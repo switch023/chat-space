@@ -1,0 +1,38 @@
+.main-chat
+  .group-summary
+    .group-summary__box
+      %p.group-summary__box__group
+        test
+      %p.group-summary__box__member
+        Member：masa
+    = link_to "#", class: "group-summary__btn" do
+      Edit
+
+  .messages
+    .message__box
+      .message__box__list
+        %p.message__box__list__user
+          masa
+        %p.message__box__list__date
+          2019/11/20(Wed) 17:43:01
+      .message__box__text
+        おはよう!
+
+    .message__box
+      .message__box__list
+        %p.message__box__list__user
+          masa
+        %p.message__box__list__date
+          2019/11/21(Thu) 19:21:54
+      .message__box__text
+        こんばんは！
+
+  .from
+    %from.from__input_message
+      %div.from__input_message__box
+        %input{type: "text", class: "from__input_message__box__text", placeholder: "type a message"}
+        %label{class: "from__input_message__box__image"}
+          = icon("fas", "image")
+          %input{type: "file", class: "from__input_message__box__image__file"}
+      %input{type: "submit", value: "Send", class: "from__input_message__btn"}
+     
