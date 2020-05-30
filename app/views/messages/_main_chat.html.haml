@@ -9,30 +9,13 @@
       Edit
 
   .messages
-    .message__box
-      .message__box__list
-        %p.message__box__list__user
-          masa
-        %p.message__box__list__date
-          2019/11/20(Wed) 17:43:01
-      .message__box__text
-        おはよう!
-
-    .message__box
-      .message__box__list
-        %p.message__box__list__user
-          masa
-        %p.message__box__list__date
-          2019/11/21(Thu) 19:21:54
-      .message__box__text
-        こんばんは！
+    = render @messages
 
   .from
-    %from.from__input_message
-      %div.from__input_message__box
-        %input{type: "text", class: "from__input_message__box__text", placeholder: "type a message"}
-        %label{class: "from__input_message__box__image"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'from__text', placeholder: 'type a message'
+      .from__box
+        = f.label :image, class: 'form__box__image' do
           = icon("fas", "image")
-          %input{type: "file", class: "from__input_message__box__image__file"}
-      %input{type: "submit", value: "Send", class: "from__input_message__btn"}
-     
+          = f.file_field :image, class: 'from__box__hidden'
+      = f.submit 'Send', class: 'from__submit'
