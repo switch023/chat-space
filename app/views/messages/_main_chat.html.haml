@@ -2,10 +2,12 @@
   .group-summary
     .group-summary__box
       %p.group-summary__box__group
-        test
+        = @group.name
       %p.group-summary__box__member
-        Member：masa
-    = link_to "#", class: "group-summary__btn" do
+        Member:
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
+    = link_to 'edit', class: "group-summary__btn" do
       Edit
 
   .messages
