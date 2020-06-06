@@ -13,11 +13,11 @@
   .messages
     = render @messages
 
-  .from
+  .form
     = form_for [@group, @message] do |f|
-      = f.text_field :body, class: 'from__text', placeholder: 'type a message'
-      .from__box
+      .form__box
+        = f.text_field :body, class: 'form__box__text', placeholder: 'type a message'
         = f.label :image, class: 'form__box__image' do
           = icon("fas", "image")
-          = f.file_field :image, class: 'from__box__hidden'
-      = f.submit 'Send', class: 'from__submit'
+          = f.file_field :image, class: 'form__box__hidden'
+      = f.submit 'Send', class: 'form__submit'
