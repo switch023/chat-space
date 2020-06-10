@@ -1,5 +1,4 @@
-
-.message__box
+.message__box{data: {message: {id: message.id}}}
   .message__box__list
     %p.message__box__list__user
       = message.user.name
@@ -9,4 +8,4 @@
     - if message.body.present?
       %p.message__box__input__text
         = message.body
-    = image_tag message.image.url, class: 'message__box__input__image' if message.image.present?
+  = image_tag message.image.url, class: 'message__box__input__image' if message.image.present?
